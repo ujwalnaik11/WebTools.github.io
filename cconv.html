@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Colour Converter</title>
+    <link rel="stylesheet" href="css/cconv.css">
+
+</head>
+<body>
+    <div class="container">
+   <h1>Colour Converter</h1> 
+   
+    <form name="cconvform">
+    <table class="dtable" style="width:100%;">
+        <tr><td>HEX(#) : </td>
+            <td><input type="text" placeholder="Enter value" colspan="2" id="hex"></td>
+            <td></td>
+            <td></td>
+            <td><input type="button" value="Convert" onclick="calc_hex()" id="hexc" class="btn"></td>
+            
+            
+        </tr>
+        <br>
+        <tr><td>RGB (R,G,B): </td>
+            <td><input type="range" value="Convert" class="slider" min="0" max="255" onchange="onslide(this.value,1)"  id="r"><input type="number" min="0" max="255" id="rn" oninput="onnumber(this.value,1)"></td>
+            <td><input type="range" value="Convert" class="slider" min="0" max="255" onchange="onslide(this.value,2)" id="g"><input type="number" min="0" max="255" id="gn" oninput="onnumber(this.value,2)"></td>
+            <td><input type="range" value="Convert" class="slider" min="0" max="255" onchange="onslide(this.value,3)" id="b"><input type="number" min="0" max="255" id="bn" oninput="onnumber(this.value,3)"></td>
+            <td><input type="button" value="Convert" onclick="calc_rgb()" id="rgb" class="btn"></td>
+        </tr>
+        <br>
+        <tr><td>HSV (H,S,V): </td>
+            <td><input type="range" value="Convert" class="slider" min="0" max="360" onchange="onslide(this.value,4)" id="h"><input type="number" min="0" max="360" id="hn" oninput="onnumber(this.value,4)"></td>
+            <td><input type="range" value="Convert" class="slider" min="0" max="100" onchange="onslide(this.value,5)" id="s"><input type="number" min="0" max="100" id="sn" oninput="onnumber(this.value,5)"></td>
+            <td><input type="range" value="Convert" class="slider" min="0" max="100" onchange="onslide(this.value,6)" id="v"><input type="number" min="0" max="100" id="vn" oninput="onnumber(this.value,6)"></td>
+            <td><input type="button" value="Convert" onclick="calc_hsv()" id="hsv" class="btn"></td>
+        </tr>
+    </table>
+        <br>
+        Colour Preview :
+        <input type="textbox" name="colour" id="colour" disabled ></td>
+            
+        <input type="button" value="Clear" id="clear" class="btn">
+   
+    </form>
+    </div>
+    <script type="text/javascript" src="js/cconv.js"></script>
+    <script>
+
+        function onslide(x,y)
+        {if(y===1)document.cconvform.rn.value = x;
+        else if(y===2)document.cconvform.gn.value = x;
+        else if(y===3)document.cconvform.bn.value = x;
+        else if(y===4)document.cconvform.hn.value = x;
+        else if(y===5)document.cconvform.sn.value = x;
+        else if(y===6)document.cconvform.vn.value = x;
+        }
+
+
+        function onnumber(x,y)
+        {if(y===1)document.cconvform.r.value = x;
+        else if(y===2)document.cconvform.g.value = x;
+        else if(y===3)document.cconvform.b.value = x;
+        else if(y===4)document.cconvform.h.value = x;
+        else if(y===5)document.cconvform.s.value = x;
+        else if(y===6)document.cconvform.v.value = x;
+        }
+
+		function calc_hex()
+		{
+			hex = document.cconvform.hex.value;
+			rgb = hex2rgb(hex);
+			r = rgb[0];
+			g = rgb[1];
+			b = rgb[2];
+			hsv = rgb2hsv(r,g,b);
+			document.cconvform.r.value = r;
+            document.cconvform.rn.value = r;
+			document.cconvform.g.value = g;
+            document.cconvform.gn.value = g;
+			document.cconvform.b.value = b;
+            document.cconvform.bn.value = b;
+			document.cconvform.h.value = hsv[0];
+            document.cconvform.hn.value = hsv[0];
+			document.cconvform.s.value = hsv[1];
+            document.cconvform.sn.value = hsv[1];
+			document.cconvform.v.value = hsv[2];
+            document.cconvform.vn.value = hsv[2];
+			set_color(hex);
+		}
+
+		function calc_rgb()
+		{
+			r = document.cconvform.r.value;
+			g = document.cconvform.g.value;
+			b = document.cconvform.b.value;
+			hex = rgb2hex(r,g,b);
+			hsv = rgb2hsv(r,g,b);
+			document.cconvform.hex.value = hex;
+			document.cconvform.h.value = hsv[0];
+            document.cconvform.hn.value = hsv[0];
+			document.cconvform.s.value = hsv[1];
+            document.cconvform.sn.value = hsv[1];
+			document.cconvform.v.value = hsv[2];
+            document.cconvform.vn.value = hsv[2];
+            document.cconvform.rn.value = r;
+            document.cconvform.gn.value = g;
+            document.cconvform.bn.value = b;
+			set_color(hex);
+		}
+		function calc_hsv()
+		{
+			h = document.cconvform.h.value;
+			s = document.cconvform.s.value;
+			v = document.cconvform.v.value;
+			rgb = hsv2rgb(h,s,v);
+			r = rgb[0];
+			g = rgb[1];
+			b = rgb[2];
+			hex = rgb2hex(r,g,b);
+			document.cconvform.hex.value = hex;
+			document.cconvform.r.value = r;
+            document.cconvform.rn.value = r;
+			document.cconvform.g.value = g;
+            document.cconvform.gn.value = g;
+			document.cconvform.b.value = b;
+            document.cconvform.bn.value = b;
+            document.cconvform.hn.value = h;
+            document.cconvform.sn.value = s;
+            document.cconvform.vn.value = v;
+			set_color(hex);
+		}
+		
+
+	</script>
+
+</body>
+</html>

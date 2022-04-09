@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Length Converter</title>
+    <link rel="stylesheet" href="css/lconv.css">
+</head>
+<body>
+    <div class="container">
+    <h1>Length Converter</h1>
+    <form>
+        From : <select name="unit1" id="u1">
+            <option value="meter">meter</option>
+            <option value="feet">feet</option>
+            <option value="kilometer">kilometer</option>    
+        </select> 
+        To : <select name="unit2" id="u2">
+            <option value="meter">meter</option>
+            <option value="feet">feet</option>
+            <option value="kilometer">kilometer</option>    
+        </select>
+        <br><br>
+        From : <input type="text" name="input" placeholder="Enter value" id="input">
+        <input type="button" value="Convert" onclick="calculate()" class="btn" id="convert">
+        <input type="button" value="Clear" onclick="clear()" class="btn" id="clear">
+        <br><br>
+        Result : <input type="text" id="result" disabled />
+
+    </form>
+    </div>
+    <script type="text/javascript" src="js/lconv.js"></script>
+</body>
+</html>

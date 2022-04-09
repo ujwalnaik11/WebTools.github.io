@@ -1,0 +1,59 @@
+#colour
+{
+    height:70px;
+    width: 200px;
+    padding-bottom: 5px;
+}
+
+body{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: wheat;
+}
+
+h1{
+    color: #bb5d16;
+}
+.container{
+    width: 700px;
+}
+
+table{
+    width: 700px;
+}
+
+input{
+    width: 80%;
+    height: 40px;
+    font-size: 1em;
+    margin: 0.2em 0;
+    border-radius: 10px;
+    border: none;
+    background: #edeef7;
+    outline: none;
+    padding: 0 1em;
+}
+.btn{
+    width: 100%;
+    height: 40px;
+    background: #364547;
+    color: white;
+    border-radius: 10px;
+    border: none;
+    font-size: 1em;
+    margin: 0em 0;
+}
+
+#r{
+    background-color: red;
+}
+
+#g{
+    background-color: green;
+}
+
+#b{
+    background-color: blue;
+}

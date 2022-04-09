@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Length Converter</title>
+    <link rel="stylesheet" href="css/tconv.css">
+</head>
+<body>
+    <div class="container">
+    <h1>Temperature Converter</h1>
+    <form>
+    <table style="width:100%">
+        <tr><td>Fahrenheit: </td>
+            <td><input type="text" placeholder="Enter value" id="f"></td>
+            <td><input type="button" value="Convert" id="fb" class="btn"></td>
+        </tr>
+        <tr><td>Celsius:</td> 
+            <td><input type="text" placeholder="Enter value" id="c"></td>
+            <td><input type="button" value="Convert" id="cb" class="btn"></td>
+        </tr>
+        <tr><td>Kelvin: </td>
+            <td><input type="text" placeholder="Enter value" id="k"></td>
+            <td><input type="button" value="Convert" id="kb" class="btn"></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td><input type="button" value="Clear" onclick="clear()" id="clear" class="btn"></td>
+        </tr>
+    </table>
+    </form>
+    </div>
+    <script type="text/javascript" src="js/tconv.js"></script>
+</body>
+</html>

@@ -1,0 +1,26 @@
+body{
+    height: 80vh;
+    width: 75vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+}
+.container{
+    width: 300px;
+    font-size: xx-large;
+}
+
+
+h1{
+    color: #450a9c;
+}
+
+a:hover{color: tomato;
+font-size: larger;}
+
+.tool{
+    font-family: tangerine;
+    font-size: xx-large;
+    color: rgb(207, 23, 194);
+}

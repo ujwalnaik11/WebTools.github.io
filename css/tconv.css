@@ -1,0 +1,56 @@
+body{
+    height: 100vh;
+    width: 75vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: wheat;
+}
+
+h1{
+    color: #bb5d16;
+}
+.container{
+    width: 700px;
+}
+
+table{
+    width: 700px;
+}
+
+
+select{
+    width: 100%;
+    height: 40px;
+    font-size: 1em;
+    cursor: pointer;
+    outline: none;
+    background: #12b46e;
+    color: white;
+    margin: 0.2em 0;
+    padding: 0 1em;
+    border-radius: 10px;
+    border: none;
+}
+input{
+    width: 94%;
+    height: 40px;
+    font-size: 1em;
+    margin: 0.2em 0;
+    border-radius: 10px;
+    border: none;
+    background: #edeef7;
+    outline: none;
+    padding: 0 1em;
+}
+.btn{
+    width: 100%;
+    height: 40px;
+    background: #364547;
+    color: white;
+    border-radius: 10px;
+    border: none;
+    margin-left: 0em 0;
+    font-size: 1em;
+}
+
